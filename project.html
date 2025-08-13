@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Anand Singh</title>
+    
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter for a clean, modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom styles to enhance the design */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0fdf4; /* A light green background */
+            scroll-behavior: smooth;
+        }
+
+        /* Styles for the filter buttons */
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            transition: all 0.3s ease-in-out;
+            font-weight: 500;
+            color: #4b5563; /* gray-600 */
+            flex-grow: 1;
+            text-align: center;
+        }
+        .filter-btn:hover {
+            background-color: #d1fae5; /* emerald-200 */
+            color: #065f46; /* emerald-800 */
+        }
+        .filter-btn.active {
+            background-color: #10b981; /* emerald-500 */
+            color: white;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased">
+
+    <!-- Main Container -->
+    <div class="container mx-auto p-4 md:p-8 max-w-6xl">
+
+        <!-- Navigation Bar -->
+        <nav class="bg-white/70 backdrop-blur-md rounded-xl shadow-sm p-4 mb-8 sticky top-4 z-20">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-xl font-bold text-emerald-600">AS</a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex flex-grow justify-end space-x-8 text-gray-600">
+                    <a href="index.html#about" class="hover:text-emerald-500 transition-colors">About</a>
+                    <a href="index.html#skills" class="hover:text-emerald-500 transition-colors">Skills</a>
+                    <a href="project.html" class="text-emerald-600 font-semibold">Projects</a>
+                    <a href="contactme.html" class="hover:text-emerald-500 transition-colors">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-700 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <a href="index.html#about" class="block py-2 px-4 text-sm text-gray-700 hover:bg-emerald-50 rounded">About</a>
+                <a href="index.html#skills" class="block py-2 px-4 text-sm text-gray-700 hover:bg-emerald-50 rounded">Skills</a>
+                <a href="project.html" class="block py-2 px-4 text-sm text-emerald-700 bg-emerald-100 rounded">Projects</a>
+                <a href="contactme.html" class="block py-2 px-4 text-sm text-gray-700 hover:bg-emerald-50 rounded">Contact</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Header Section -->
+            <div class="text-center my-12">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800">My Work</h1>
+                <p class="mt-4 text-lg text-gray-600">A selection of my projects and professional resume.</p>
+            </div>
+
+            <!-- CV Download Section -->
+            <div class="bg-white rounded-2xl shadow-lg p-8 mb-8 text-center">
+                <h2 class="text-2xl font-bold mb-4 text-emerald-600">Download My Resume</h2>
+                <p class="text-gray-700 mb-6 max-w-2xl mx-auto">
+                    For a detailed overview of my professional experience, skills, and qualifications, please feel free to download my CV.
+                </p>
+                <!-- IMPORTANT: Replace 'assets/Anand_Singh_CV.pdf' with the actual path to your CV file -->
+                <a href="resources\cv 2.pdf" download="resources\cv 2.pdf" class="inline-block bg-emerald-500 text-white font-bold px-8 py-3 rounded-lg hover:bg-emerald-600 transition-transform hover:scale-105 shadow-lg">
+                    Download CV
+                </a>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="bg-white rounded-full shadow-md p-2 mb-16 max-w-xl mx-auto flex flex-col sm:flex-row justify-around items-center gap-2 sm:gap-0">
+                <a href="#power-bi" class="filter-btn active w-full sm:w-auto">Power BI</a>
+                <a href="#python" class="filter-btn w-full sm:w-auto">Python</a>
+                <a href="#graphic-design" class="filter-btn w-full sm:w-auto">Graphic Design</a>
+                <a href="#video-editing" class="filter-btn w-full sm:w-auto">Video Editing</a>
+                
+                
+            </div>
+
+            <!-- Projects Sections -->
+            <div class="space-y-16">
+
+                <!-- Power BI Section -->
+                <section id="power-bi">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-8 border-l-4 border-emerald-500 pl-4">Power BI</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="resources\powerBI1.png" alt="Screenshot of Sales Dashboard" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">Student Result Analysis</h3>
+                                <p class="text-gray-600 mb-4">An interactive dashboard visualizing  data to analyse student result .</p>
+                                <a href="https://github.com/anandsingh-fin/PowerBI/tree/main/POWERBI%201" class="font-semibold text-emerald-600 hover:text-emerald-700">View Details &rarr;</a>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="resources\powerBI2.png" alt="Screenshot of Marketing Analytics Report" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">Swiggy Data Analysis</h3>
+                                <p class="text-gray-600 mb-4">A comprehensive data analysis and visualization project for swiggy's performance report</p>
+                                <a href="https://github.com/anandsingh-fin/PowerBI/tree/main/POWERBI%202" class="font-semibold text-emerald-600 hover:text-emerald-700">View Details &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                 <!-- Python Section -->
+                <section id="python">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-8 border-l-4 border-yellow-500 pl-4">Python</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="resources\pythn1.png" alt="Screenshot of Data Automation Script" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">Python Programming</h3>
+                                <p class="text-gray-600 mb-4">A Python script to automate the process of cleaning and processing daily data imports.</p>
+                                <a href="https://github.com/anandsingh-fin/Python-Programming" class="font-semibold text-yellow-600 hover:text-yellow-700">View on GitHub &rarr;</a>
+                            </div>
+                        </div>
+                        <!-- <div class="bg-white rounded-2xl shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="https://placehold.co/600x400/fef3c7/b45309?text=Web+Scraper" alt="Screenshot of Web Scraper" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">Competitor Analysis Web Scraper</h3>
+                                <p class="text-gray-600 mb-4">A tool built with BeautifulSoup and Scrapy to gather public data for market analysis.</p>
+                                <a href="#" class="font-semibold text-yellow-600 hover:text-yellow-700">View on GitHub &rarr;</a>
+                            </div> -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Graphic Design Section -->
+                <section id="graphic-design">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-8 border-l-4 border-purple-500 pl-4">Graphic Design</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="resources\Depression.png" alt="Screenshot of Tech Company Rebranding" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">Depression or Health Wellness</h3>
+                                <p class="text-gray-600 mb-4">This poster powerfully communicates the concept of holistic health and wellness. It tells a visual story of personal transformation.</p>
+                                <a href="https://github.com/anandsingh-fin/Graphic-Design" class="font-semibold text-purple-600 hover:text-purple-700">View Graphics &rarr;</a>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="resources\sadness.png" alt="Screenshot of Infographics" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">Sadness and Mental Wellness</h3>
+                                <p class="text-gray-600 mb-4">This powerful image serves as a bold and modern statement on mental health. It visualizes the internal conflict and choice that define our mental state</p>
+                                <a href="https://github.com/anandsingh-fin/Graphic-Design/blob/main/sadness.png" class="font-semibold text-purple-600 hover:text-purple-700">View Graphics &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Video Editing Section -->
+                <section id="video-editing">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-8 border-l-4 border-blue-500 pl-4">Video Editing</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="resources\y1.jpg" alt="Screenshot of Brand Story Video" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">Brand Story Video</h3>
+                                <p class="text-gray-600 mb-4">A short, compelling video crafted to communicate a startup's mission and values.</p>
+                                <a href="https://youtube.com/shorts/VWkaxO6_ksw?feature=share" class="font-semibold text-blue-600 hover:text-blue-700">Watch Video &rarr;</a>
+                            </div>
+                        </div>
+                        <!-- <div class="bg-white rounded-2xl shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                            <img src="https://placehold.co/600x400/dbeafe/1e40af?text=Social+Media+Ad" alt="Screenshot of Social Media Ad" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold mb-2">Social Media Ad Campaign</h3>
+                                <p class="text-gray-600 mb-4">A series of short, engaging video ads optimized for various social platforms.</p>
+                                <a href="#" class="font-semibold text-blue-600 hover:text-blue-700">See Campaign &rarr;</a>
+                            </div>
+                        </div> -->
+                    </div>
+                </section>
+
+                
+
+               
+
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center mt-16 py-8 border-t border-gray-200">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://www.linkedin.com/in/anand-singh-fin" class="text-gray-500 hover:text-emerald-600 transition-colors">LinkedIn</a>
+                <a href="https://x.com/fin_anand?t=09ArSKrg4Fr7eoKubfAO4A&s=09" class="text-gray-500 hover:text-emerald-600 transition-colors">X</a>
+                <a href="https://github.com/anandsingh-fin" class="text-gray-500 hover:text-emerald-600 transition-colors">GitHub</a>
+            </div>
+            <p class="text-gray-500 text-sm">&copy; 2025 Anand Singh. All Rights Reserved.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // --- INTERACTIVITY SCRIPT ---
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Mobile Menu Toggle ---
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if(menuBtn) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // --- Smooth scrolling for filter and nav links ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(this.getAttribute('href'));
+                    if(targetElement) {
+                         targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // --- Filter Button Active State Management ---
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectSections = document.querySelectorAll('main section');
+
+            // Handle click to set active state immediately
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Update active state on scroll
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -50% 0px', // Trigger when section is in the middle of the viewport
+                threshold: 0
+            };
+
+            const sectionObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        filterButtons.forEach(btn => {
+                            btn.classList.remove('active');
+                            if (btn.getAttribute('href') === `#${id}`) {
+                                btn.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            projectSections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+        });
+    </script>
+
+</body>
+</html>

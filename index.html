@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anand Singh | Portfolio</title>
+    
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter for a clean, modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom styles to enhance the design */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0fdf4; /* A light green background */
+            scroll-behavior: smooth; /* Enables smooth scrolling for the whole page */
+        }
+
+        /* The typing cursor effect */
+        .typing-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.5rem; /* Match font size */
+            background-color: #10b981; /* Emerald-500 */
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Animation for sections fading in on scroll */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Style for the 3D tilt effect on the image card */
+        .image-card {
+            transition: transform 0.1s ease;
+            transform-style: preserve-3d;
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased">
+
+    <!-- Main Container -->
+    <div class="container mx-auto p-4 md:p-8 max-w-6xl">
+
+        <!-- Navigation Bar -->
+        <nav class="bg-white/70 backdrop-blur-md rounded-xl shadow-sm p-4 mb-8 sticky top-4 z-20">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-xl font-bold text-emerald-600">AS</a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex flex-grow justify-end space-x-8 text-gray-600">
+                    <a href="#about" class="hover:text-emerald-500 transition-colors">About</a>
+                    <a href="#skills" class="hover:text-emerald-500 transition-colors">Skills</a>
+                    <a href="project.html" class="hover:text-emerald-500 transition-colors">Projects</a>
+                    <a href="contactme.html" class="hover:text-emerald-500 transition-colors">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-700 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <a href="#about" class="block py-2 px-4 text-sm text-gray-700 hover:bg-emerald-50 rounded">About</a>
+                <a href="#skills" class="block py-2 px-4 text-sm text-gray-700 hover:bg-emerald-50 rounded">Skills</a>
+                <a href="portfolio.html" class="block py-2 px-4 text-sm text-gray-700 hover:bg-emerald-50 rounded">Portfolio</a>
+                <a href="contactme.html" class="block py-2 px-4 text-sm text-gray-700 hover:bg-emerald-50 rounded">Contact</a>
+            </div>
+        </nav>
+
+        <!-- Main Content Grid -->
+        <main class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- Left Column: Image -->
+            <div class="md:col-span-1">
+                <div class="bg-white rounded-2xl shadow-lg p-6 sticky top-28 image-card" style="perspective: 1000px;">
+                    <img 
+                        src="resources\photo_2025-08-13_23-41-27.jpg" 
+                        alt="A professional portrait of Anand Singh" 
+                        class="rounded-xl w-full h-auto object-cover"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x800/e0e0e0/333?text=Image+Not+Found';"
+                    >
+                </div>
+            </div>
+
+            <!-- Right Column: Info Sections -->
+            <div class="md:col-span-2 space-y-8">
+
+                <!-- Name & Title Section -->
+                <div class="bg-white rounded-2xl shadow-lg p-8">
+                    <h1 id="name-title" class="text-4xl md:text-5xl font-extrabold text-gray-800 min-h-[3rem]"></h1>
+                    <p class="mt-4 text-lg text-gray-600">Data-Driven Insights | Compelling Visual Stories.</p>
+                </div>
+
+                <!-- About Section -->
+                <div id="about" class="bg-white rounded-2xl shadow-lg p-8 fade-in-section">
+                    <h2 class="text-3xl font-bold mb-4 text-emerald-600">About Me</h2>
+                    <p class="text-gray-700 leading-relaxed">
+                        A strategic professional who transforms complex data into actionable insights with Power BI, crafts compelling brand narratives through video, and builds resonant visual identities through expert graphic design. I excel at the intersection of analytical precision and creative vision to solve complex challenges and drive measurable growth.
+                    </p>
+                </div>
+
+                <!-- Skills Section -->
+                <div id="skills" class="bg-white rounded-2xl shadow-lg p-8 fade-in-section">
+                    <h2 class="text-3xl font-bold mb-6 text-emerald-600">Core Skills</h2>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-emerald-100 text-emerald-800 text-sm font-medium px-4 py-2 rounded-full">Power BI</span>
+                        <span class="bg-emerald-100 text-emerald-800 text-sm font-medium px-4 py-2 rounded-full">Data Visualization</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-full">Technical Analysis</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-full">Video Editing</span>
+                        <span class="bg-purple-100 text-purple-800 text-sm font-medium px-4 py-2 rounded-full">Graphic Design</span>
+                        <span class="bg-purple-100 text-purple-800 text-sm font-medium px-4 py-2 rounded-full">Fundamental Analysis</span>
+                        <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-2 rounded-full">Management & Operations</span>
+                    </div>
+                </div>
+
+
+                <!--Education Section -->
+                 <div id="contact" class="bg-white rounded-2xl shadow-lg p-8 fade-in-section">
+                    <h2 class="text-3xl font-bold mb-4 text-emerald-600">Education</h2>
+                    <p class="text-gray-700 mb-6">
+                        <b>Centurion University,Bhubaneswar </b>
+                            <br>
+                            Bachelor of Business Administration(7.1 CGPA) 
+                    
+                </div>
+
+                <!-- Contact Section -->
+                <div id="contact" class="bg-white rounded-2xl shadow-lg p-8 fade-in-section">
+                    <h2 class="text-3xl font-bold mb-4 text-emerald-600">Let's Connect</h2>
+                    <p class="text-gray-700 mb-6">
+                        I'm always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious vision.
+                    </p>
+                    <a href="mailto:hello@anandsingh.com" class="inline-block bg-emerald-500 text-white font-bold px-6 py-3 rounded-lg hover:bg-emerald-600 transition-transform hover:scale-105 shadow-lg">
+                        Say Hello
+                    </a>
+                </div>
+
+               
+
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center mt-16 py-8 border-t border-gray-200">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://www.linkedin.com/in/anand-singh-fin" class="text-gray-500 hover:text-emerald-600 transition-colors">LinkedIn</a>
+                <a href="https://x.com/fin_anand?t=09ArSKrg4Fr7eoKubfAO4A&s=09" class="text-gray-500 hover:text-emerald-600 transition-colors">X</a>
+                <a href="https://github.com/anandsingh-fin" class="text-gray-500 hover:text-emerald-600 transition-colors">GitHub</a>
+            </div>
+            <p class="text-gray-500 text-sm">&copy; 2025 Anand Singh. All Rights Reserved.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // --- INTERACTIVITY SCRIPT ---
+
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- 1. Typing effect for the name ---
+            const nameElement = document.getElementById('name-title');
+            const nameText = 'Anand Singh';
+            let i = 0;
+
+            function typeWriter() {
+                if (i < nameText.length) {
+                    nameElement.innerHTML = nameText.substring(0, i + 1) + '<span class="typing-cursor"></span>';
+                    i++;
+                    setTimeout(typeWriter, 150);
+                } else {
+                    nameElement.innerHTML = nameText;
+                }
+            }
+            typeWriter();
+
+            // --- 2. Fade-in effect for sections on scroll ---
+            const sections = document.querySelectorAll('.fade-in-section');
+            const sectionObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { root: null, threshold: 0.1 });
+            sections.forEach(section => sectionObserver.observe(section));
+
+            // --- 3. Mobile Menu Toggle ---
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // --- 4. Smooth scrolling for nav links and close mobile menu on click ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(this.getAttribute('href'));
+                    if (targetElement) {
+                         targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                   
+                    // Hide mobile menu after clicking a link
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+            
+            // --- 5. Image Card 3D Tilt Effect ---
+            const imageCard = document.querySelector('.image-card');
+            if (imageCard) {
+                imageCard.addEventListener('mousemove', (e) => {
+                    const { left, top, width, height } = imageCard.getBoundingClientRect();
+                    const x = e.clientX - left;
+                    const y = e.clientY - top;
+                    
+                    const centerX = width / 2;
+                    const centerY = height / 2;
+                    
+                    const deltaX = (x - centerX) / centerX;
+                    const deltaY = (y - centerY) / centerY;
+                    
+                    const rotateY = deltaX * 10; // Max rotation 10 degrees
+                    const rotateX = -deltaY * 10; // Max rotation 10 degrees
+                    
+                    imageCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+                });
+                
+                imageCard.addEventListener('mouseleave', () => {
+                    imageCard.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
